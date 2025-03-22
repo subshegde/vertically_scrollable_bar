@@ -1,6 +1,6 @@
 # Vertically Scrollable Bar
 
-![verticallyScrollableBar3](https://github.com/user-attachments/assets/a9a7eaf5-c652-43c0-8634-98ebaa1386bc)
+![vsb](https://github.com/user-attachments/assets/07042c13-4bf1-4d8f-9b33-2c02bdb5f1fd)
 
 ![vsb1](https://github.com/user-attachments/assets/90c42538-1d3d-4725-af11-a0fe623df517)
 
