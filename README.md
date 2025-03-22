@@ -49,7 +49,7 @@ https://github.com/user-attachments/assets/9df477b4-f3c6-49bd-a7ac-a07a1a5f4122
 *Progress Indicators :*
 - For network images, a circular progress indicator is shown while the image is loading, keeping users informed of the load status.
 
-## About The Project
+## About The Package
 
 This project is a Flutter-based component created to provide a vertical navigation bar or menu with high customization. It allows developers to quickly add a scrollable side menu in their apps with options like gradient backgrounds, customizable icons, text, and colors.
 
