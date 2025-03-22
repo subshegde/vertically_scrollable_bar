@@ -1,5 +1,11 @@
 # Vertically Scrollable Bar
 
+![vsb1](https://github.com/user-attachments/assets/90c42538-1d3d-4725-af11-a0fe623df517)
+
+![verticallyScrollableBar2](https://github.com/user-attachments/assets/35e0d973-f9e2-4aea-bbc4-594147089044)
+
+https://github.com/user-attachments/assets/9df477b4-f3c6-49bd-a7ac-a07a1a5f4122
+
 **Overview**: 
   - The `VerticallyScrollableBar` is a customizable widget in Flutter designed to provide a vertical scrollable navigation bar or menu. It can be used for side menus or navigation bars in applications where users can select from a list of options. This widget allows customization of colors, gradients, item backgrounds, text, icons, and more, making it suitable for various UI themes. The widget supports dynamic selection of menu items with user interaction, making it ideal for apps that require a highly customizable vertical navigation component.
 
