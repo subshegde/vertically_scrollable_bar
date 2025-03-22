@@ -170,75 +170,70 @@ class VerticallyScrollableBar extends StatelessWidget {
   /// This method handles different image sources like 'icon', 'asset', 'network', etc.
   /// It also handles loading and error cases for images.
   Widget _getImageWidget(dynamic image, bool isSelected) {
-    try {
-      switch (imageType) {
-        case 'icon':
-          return Icon(
-            image,
-            color: isSelected
-                ? selectedItemIconColor
-                : unselectedItemIconColor,
-            size: 20,
-          );
-        case 'asset':
-          return image == null || image.isEmpty
-              ? _getFallbackImage(isSelected)
-              : Image.asset(
-                  image,
-                  width: 24,
-                  height: 24,
-                  color: isSelected ? selectedItemIconColor : unselectedItemIconColor,
-                );
-        case 'network':
-          return image == null || image.isEmpty
-              ? _getFallbackImage(isSelected)
-              : Image.network(
-                  image,
-                  width: 24,
-                  height: 24,
-                  color: isSelected ? selectedItemIconColor : unselectedItemIconColor,
-                  loadingBuilder: (context, child, progress) {
-                    if (progress == null) return child;
-                    return CircularProgressIndicator(color: circularProgressIndicatorColor,);
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    return _getFallbackImage(isSelected);
-                  },
-                );
-        case 'file':
-          return image == null || !File(image).existsSync()
-              ? _getFallbackImage(isSelected)
-              : Image.file(
-                  File(image),
-                  width: 24,
-                  height: 24,
-                  color: isSelected ? selectedItemIconColor : unselectedItemIconColor,
-                );
-        case 'memory':
-          return image == null || (image is Uint8List && image.isEmpty)
-              ? _getFallbackImage(isSelected)
-              : Image.memory(
-                  image,
-                  width: 24,
-                  height: 24,
-                  color: isSelected ? selectedItemIconColor : unselectedItemIconColor,
-                );
-        case 'svg':
-          return image == null || image.isEmpty
-              ? _getFallbackImage(isSelected)
-              : SvgPicture.asset(
-                  image,
-                  width: 24,
-                  height: 24,
-                  color: isSelected ? selectedItemIconColor : unselectedItemIconColor,
-                );
-        default:
-          return _getFallbackImage(isSelected);
-      }
-    } catch (e) {
-      return _getFallbackImage(isSelected); // If error, show fallback icon
+  try {
+    switch (imageType) {
+      case 'icon':
+        return Icon(
+          image,
+          color: isSelected
+              ? selectedItemIconColor
+              : unselectedItemIconColor,
+          size: 20,
+        );
+      case 'assets':
+        return image == null || image.isEmpty
+            ? _getFallbackImage(isSelected)
+            : Image.asset(
+                image,
+                width: 24,
+                height: 24,
+              );
+      case 'network':
+        return image == null || image.isEmpty
+            ? _getFallbackImage(isSelected)
+            : Image.network(
+                image,
+                width: 24,
+                height: 24,
+                loadingBuilder: (context, child, progress) {
+                  if (progress == null) return child;
+                  return CircularProgressIndicator(color: circularProgressIndicatorColor);
+                },
+                errorBuilder: (context, error, stackTrace) {
+                  return _getFallbackImage(isSelected);
+                },
+              );
+      case 'file':
+        return image == null || !File(image).existsSync()
+            ? _getFallbackImage(isSelected)
+            : Image.file(
+                File(image),
+                width: 24,
+                height: 24,
+              );
+      case 'memory':
+        return image == null || (image is Uint8List && image.isEmpty)
+            ? _getFallbackImage(isSelected)
+            : Image.memory(
+                image,
+                width: 24,
+                height: 24,
+              );
+      case 'svg':
+        return image == null || image.isEmpty
+            ? _getFallbackImage(isSelected)
+            : SvgPicture.asset(
+                image,
+                width: 24,
+                height: 24,
+              );
+      default:
+        return _getFallbackImage(isSelected);
     }
+  } catch (e) {
+    return _getFallbackImage(isSelected); // If error, show fallback icon
   }
+}
 
   /// Provides a fallback image when the provided image is not valid or is missing.
   ///

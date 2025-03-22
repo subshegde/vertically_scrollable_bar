@@ -88,7 +88,7 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
                 unselectedItemIconColor: Colors.teal[400],
                 itemHeight: 80,
                 itemWidth: 100,
-                imageType: 'icon',
+                imageType: 'assets',
               ),
               // LinearGradient example
 
