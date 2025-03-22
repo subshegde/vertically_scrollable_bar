@@ -50,18 +50,6 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
     ];
     setState(() {});
   }
-
-  Map<int, String> typeMap = {
-    0: '',
-    1: 'two-wheeler-bike',
-    2: 'two-wheeler-scooty',
-    3: 'electric',
-    4: 'car',
-    5: 'openjeep',
-    6: 'jeep',
-    7: 'mancycle',
-    8: 'ladybird',
-  };
    void _onItemTapped(int index) {
     setState(() {
       _selectedIndexBottomNav = index;

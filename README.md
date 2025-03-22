@@ -96,9 +96,6 @@ VerticallyScrollableBar(
                   options: options,
                   selectedIndex: _selectedIndex,
                   onSelect: (index) {
-                    setState(() {
-                      _selectedIndex = index;
-                    });
                   },
                   menuBackgroundColor: Colors.blue[50],
                   selectedItemBackgroundColor: Colors.teal[400],
