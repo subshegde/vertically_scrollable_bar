@@ -6,7 +6,7 @@
 
 ![verticallyScrollableBar2](https://github.com/user-attachments/assets/35e0d973-f9e2-4aea-bbc4-594147089044)
 
-Demo:
+Demo videos:
 
 https://github.com/user-attachments/assets/dfe58c0b-6be2-4d81-82ab-555e3600694c
 
