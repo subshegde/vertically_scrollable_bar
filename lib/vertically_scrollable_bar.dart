@@ -89,11 +89,6 @@ class VerticallyScrollableBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get screen height to calculate available space for the scrollable bar
-    double screenHeight = MediaQuery.of(context).size.height;
-    double statusBarHeight = MediaQuery.of(context).padding.top;
-    double availableHeight = screenHeight - statusBarHeight;
-
     return SingleChildScrollView(
       child: Container(
         width: itemWidth,

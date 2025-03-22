@@ -28,6 +28,7 @@ class VehicleMainPage extends StatefulWidget {
 class _VehicleMainPageState extends State<VehicleMainPage> {
   List<Map<String, dynamic>> options = [];
   int _selectedIndex = 0;
+  int _selectedIndexBottomNav = 0;
 
   @override
   void initState() {
@@ -61,11 +62,40 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
     7: 'mancycle',
     8: 'ladybird',
   };
+   void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndexBottomNav = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text('VerticallyScrollableBar'),
+        centerTitle: true,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndexBottomNav,
+        selectedItemColor: Colors.teal,
+        onTap: _onItemTapped,
+      ),
       body: SafeArea(
         child: Row(
           children: [
@@ -79,7 +109,7 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
                     _selectedIndex = index;
                   });
                 },
-                menuBackgroundColor: Colors.blue[50],
+                menuBackgroundColor: Colors.white,
                 selectedItemBackgroundColor: Colors.teal[400],
                 unselectedItemBackgroundColor: Colors.white,
                 selectedItemTextColor: Colors.white,
@@ -88,7 +118,7 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
                 unselectedItemIconColor: Colors.teal[400],
                 itemHeight: 80,
                 itemWidth: 100,
-                imageType: 'assets',
+                imageType: 'icon',
               ),
               // LinearGradient example
 
