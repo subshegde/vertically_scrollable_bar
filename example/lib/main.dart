@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:vertically_scrollable_bar/vertically_scrollable_bar.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Vertically Scrollable Bar Demo',
       home: VehicleMainPage(),
     );
   }
@@ -27,39 +26,30 @@ class VehicleMainPage extends StatefulWidget {
 }
 
 class _VehicleMainPageState extends State<VehicleMainPage> {
-  int selectedPage = 0;
-  List<IconData> icons = [
-    Iconsax.home1,
-    Iconsax.search_normal,
-    Icons.confirmation_number_outlined,
-    Icons.bookmark_outline,
-    Icons.person_outline,
-  ];
+  List<Map<String, dynamic>> options = [];
+  int _selectedIndex = 0;
 
-  @override  
-  void initState(){
+  @override
+  void initState() {
     super.initState();
     addOptions();
   }
 
-  List<Map<String, dynamic>> options = [];
+  void addOptions() {
+    options = [
+      {'label': 'All', 'image': Icons.home},
+      {'label': 'Two Wheeler (Bike)', 'image': Icons.directions_bike},
+      {'label': 'Two Wheeler (Scooty)', 'image': Icons.motorcycle},
+      {'label': 'Electric', 'image': Icons.bolt},
+      {'label': 'Four Wheeler (Car)', 'image': Icons.directions_car},
+      {'label': 'Four Wheeler (Open Jeep)', 'image': Icons.directions_car},
+      {'label': 'Four Wheeler (Jeep)', 'image': Icons.directions_car},
+      {'label': 'Man cycle', 'image': Icons.directions_bike},
+      {'label': 'Ladybird', 'image': Icons.directions_bike},
+    ];
+    setState(() {});
+  }
 
-  int _selectedIndex = 0;
-
-void addOptions() {
-  options = [
-    {'label': 'All', 'image': Icons.home},
-    {'label': 'Two Wheeler (Bike)', 'image': Icons.directions_bike},
-    {'label': 'Two Wheeler (Scooty)', 'image': Icons.motorcycle},
-    {'label': 'Electric', 'image': Icons.bolt},
-    {'label': 'Four Wheeler (Car)', 'image': Icons.directions_car},
-    {'label': 'Four Wheeler (Open Jeep)', 'image': Icons.directions_car},
-    {'label': 'Four Wheeler (Jeep)', 'image': Icons.directions_car},
-    {'label': 'Man cycle', 'image': Icons.directions_bike},
-    {'label': 'Ladybird', 'image': Icons.directions_bike},
-  ];
-  setState(() {});
-}
   Map<int, String> typeMap = {
     0: '',
     1: 'two-wheeler-bike',
@@ -79,7 +69,6 @@ void addOptions() {
       body: SafeArea(
         child: Row(
           children: [
-            // Left Sidebar with vertical scroll
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: VerticallyScrollableBar(
@@ -90,18 +79,50 @@ void addOptions() {
                     _selectedIndex = index;
                   });
                 },
-                menuBackgroundColor: Colors.grey[100],
-                selectedItemBackgroundColor: Colors.grey[700],
+                menuBackgroundColor: Colors.blue[50],
+                selectedItemBackgroundColor: Colors.teal[400],
                 unselectedItemBackgroundColor: Colors.white,
                 selectedItemTextColor: Colors.white,
-                unselectedItemTextColor: Colors.black,
+                unselectedItemTextColor: Colors.blueGrey[700],
                 selectedItemIconColor: Colors.white,
-                unselectedItemIconColor: Colors.grey,
+                unselectedItemIconColor: Colors.teal[400],
                 itemHeight: 80,
                 itemWidth: 100,
-                navbarHeight: 35,
                 imageType: 'icon',
               ),
+              // LinearGradient example
+
+              // VerticallyScrollableBar(
+              //   options: options,
+              //   selectedIndex: _selectedIndex,
+              //   onSelect: (index) {
+              //     setState(() {
+              //       _selectedIndex = index;
+              //     });
+              //   },
+              //   menuBackgroundColor: LinearGradient(
+              //     colors: [Colors.black, Colors.grey[800]!, Colors.white],
+              //     begin: Alignment.topLeft,
+              //     end: Alignment.bottomRight,
+              //   ),
+              //   selectedItemBackgroundColor: LinearGradient(
+              //     colors: [Colors.grey[600]!, Colors.black],
+              //     begin: Alignment.topLeft,
+              //     end: Alignment.bottomRight,
+              //   ),
+              //   unselectedItemBackgroundColor: LinearGradient(
+              //     colors: [Colors.grey[300]!, Colors.grey[500]!],
+              //     begin: Alignment.topLeft,
+              //     end: Alignment.bottomRight,
+              //   ),
+              //   selectedItemTextColor: Colors.white,
+              //   unselectedItemTextColor: Colors.black54,
+              //   selectedItemIconColor: Colors.white,
+              //   unselectedItemIconColor: Colors.black45,
+              //   itemHeight: 80,
+              //   itemWidth: 100,
+              //   imageType: 'icon',
+              // )
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -114,9 +135,9 @@ void addOptions() {
                       child: Text(
                         'Selected Index: $_selectedIndex',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                            ),
                       ),
                     ),
                   ],

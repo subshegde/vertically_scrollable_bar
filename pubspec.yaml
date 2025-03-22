@@ -1,7 +1,7 @@
 name: vertically_scrollable_bar
-description: "A new Flutter package project."
+description: "The VerticallyScrollableBar is a customizable Flutter widget for creating a vertical, scrollable navigation menu. It offers flexible styling options including gradients, icons, text colors, and image handling (icons, assets, network images, SVGs). Perfect for building side menus with dynamic user interaction and smooth visual feedback."
 version: 0.0.1
-homepage:
+homepage: https://github.com/subshegde/vertically_scrollable_bar.git
 
 environment:
   sdk: '>=3.4.4 <4.0.0'
