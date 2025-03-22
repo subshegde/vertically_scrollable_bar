@@ -93,7 +93,7 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
           ),
         ],
         currentIndex: _selectedIndexBottomNav,
-        selectedItemColor: Colors.teal,
+        selectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
       body: SafeArea(
@@ -101,27 +101,7 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
           children: [
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
-              child: VerticallyScrollableBar(
-                options: options,
-                selectedIndex: _selectedIndex,
-                onSelect: (index) {
-                  setState(() {
-                    _selectedIndex = index;
-                  });
-                },
-                menuBackgroundColor: Colors.white,
-                selectedItemBackgroundColor: Colors.teal[400],
-                unselectedItemBackgroundColor: Colors.white,
-                selectedItemTextColor: Colors.white,
-                unselectedItemTextColor: Colors.blueGrey[700],
-                selectedItemIconColor: Colors.white,
-                unselectedItemIconColor: Colors.teal[400],
-                itemHeight: 80,
-                itemWidth: 100,
-                imageType: 'icon',
-              ),
-              // LinearGradient example
-
+              child: 
               // VerticallyScrollableBar(
               //   options: options,
               //   selectedIndex: _selectedIndex,
@@ -130,29 +110,50 @@ class _VehicleMainPageState extends State<VehicleMainPage> {
               //       _selectedIndex = index;
               //     });
               //   },
-              //   menuBackgroundColor: LinearGradient(
-              //     colors: [Colors.black, Colors.grey[800]!, Colors.white],
-              //     begin: Alignment.topLeft,
-              //     end: Alignment.bottomRight,
-              //   ),
-              //   selectedItemBackgroundColor: LinearGradient(
-              //     colors: [Colors.grey[600]!, Colors.black],
-              //     begin: Alignment.topLeft,
-              //     end: Alignment.bottomRight,
-              //   ),
-              //   unselectedItemBackgroundColor: LinearGradient(
-              //     colors: [Colors.grey[300]!, Colors.grey[500]!],
-              //     begin: Alignment.topLeft,
-              //     end: Alignment.bottomRight,
-              //   ),
+              //   menuBackgroundColor: Colors.white,
+              //   selectedItemBackgroundColor: Colors.teal[400],
+              //   unselectedItemBackgroundColor: Colors.white,
               //   selectedItemTextColor: Colors.white,
-              //   unselectedItemTextColor: Colors.black54,
+              //   unselectedItemTextColor: Colors.blueGrey[700],
               //   selectedItemIconColor: Colors.white,
-              //   unselectedItemIconColor: Colors.black45,
+              //   unselectedItemIconColor: Colors.teal[400],
               //   itemHeight: 80,
               //   itemWidth: 100,
               //   imageType: 'icon',
-              // )
+              // ),
+              // LinearGradient example
+
+              VerticallyScrollableBar(
+                options: options,
+                selectedIndex: _selectedIndex,
+                onSelect: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
+                menuBackgroundColor: LinearGradient(
+                  colors: [Colors.black, Colors.grey[800]!, Colors.white],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                selectedItemBackgroundColor: LinearGradient(
+                  colors: [Colors.grey[600]!, Colors.black],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                unselectedItemBackgroundColor: LinearGradient(
+                  colors: [Colors.grey[300]!, Colors.grey[500]!],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                selectedItemTextColor: Colors.white,
+                unselectedItemTextColor: Colors.black54,
+                selectedItemIconColor: Colors.white,
+                unselectedItemIconColor: Colors.black45,
+                itemHeight: 80,
+                itemWidth: 100,
+                imageType: 'icon',
+              )
             ),
             Expanded(
               child: SingleChildScrollView(
